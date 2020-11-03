@@ -1,5 +1,8 @@
 const handleRegister = (req, res, db, bcrypt) => {
     const { email, name, password } = req.body;
+    if(!email || !name || !password) {
+        return res.status(400).json("Incorrect form submission"); //returning will stop further execution of the function!
+    }
     const hash = bcrypt.hashSync(password);
     //FIRST UPDATING THE LOGIN TABLE, THEN THE USERS TABLE
     db.transaction(trx => { //Knex function to make sure that db stays consistent (querys made on single connection)

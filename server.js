@@ -64,6 +64,7 @@ app.use(cors());
     ]
 } */
 
+//ENDPOINTS
 // ROOT ROUTE
 app.get("/", (req, res) => {
     res.send("Success!");
@@ -89,8 +90,13 @@ app.put("/image", (req, res) => {
     image.handleImage(req, res, db) //function in controllers/image.js
 });
 
+//Api call ROUTE
+app.post("/imageurl", (req, res) => {
+    image.handleApiCall(req, res) //function in controllers/image.js
+});
+
 app.listen(port, () => {
-    console.log("Server is listening!");
+    console.log(`Server is listening on port ${port}!`);
 })
 
     
