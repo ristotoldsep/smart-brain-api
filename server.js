@@ -70,16 +70,24 @@ app.get("/", (req, res) => {
 });
 
 //SIGN IN ROUTE
-app.post("/signin", (req, res) => {signin.handleSignin(req, res, db, bcrypt)});
+app.post("/signin", (req, res) => {
+    signin.handleSignin(req, res, db, bcrypt) //function in controllers/signin.js
+});
 
 //REGISTER ROUTE
-app.post("/register", (req, res) => {register.handleRegister(req, res, db, bcrypt)});
+app.post("/register", (req, res) => {
+    register.handleRegister(req, res, db, bcrypt) //function in controllers/register.js
+});
 
 //PROFILE ROUTE
-app.get("/profile/:id", (req, res) => {profile.handleProfileGet(req, res, db)});
+app.get("/profile/:id", (req, res) => {
+    profile.handleProfileGet(req, res, db) //function in controllers/profile.js
+});
 
 //IMAGE ROUTE
-app.put("/image", (req, res) => {image.handleImage(req, res, db)});
+app.put("/image", (req, res) => {
+    image.handleImage(req, res, db) //function in controllers/image.js
+});
 
 app.listen(port, () => {
     console.log("Server is listening!");
