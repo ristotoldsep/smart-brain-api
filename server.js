@@ -24,7 +24,9 @@ const db = knex({
   connection: {
     //   host: localhost ip...127.0.0.1 ,
     connectString: process.env.DATABASE_URL, //environment variable
-    ssl: true
+      ssl: {
+          rejectUnauthorized: false
+      }
     // user : 'postgres',
     // password : '',
     // database : 'smartbrain'
