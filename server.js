@@ -22,7 +22,7 @@ const express = require("express"),
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
+      host: 'postgresql-flat-11561',
     user : 'postgres',
     password : 'terekest',
     database : 'smartbrain'
